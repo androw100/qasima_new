@@ -65,12 +65,12 @@ body {
     left: 0;
     background-color: #FCEFCE;
     overflow-x: hidden;
-    transition: 0.5s;
+    transition: 0.3s;
 
 }
 
 #main {
-    transition: margin-left .5s;
+    transition: margin-left .3s;
     width: 32px;
     height: 32px;
     margin: 24px;
