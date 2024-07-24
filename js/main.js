@@ -9,3 +9,11 @@ function closeNav() {
 }
 
 AOS.init();
+
+document.getElementById('show-more-btn').addEventListener('click', function() {
+    let hiddenCards = document.querySelectorAll('.hidden-card');
+    hiddenCards.forEach(function(card) {
+      card.classList.remove('hidden-card');
+    });
+    this.style.display = 'none';
+  });

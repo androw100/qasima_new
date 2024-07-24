@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap");
 
 html {
     scroll-behavior: smooth;
@@ -20,11 +20,11 @@ body {
 
 :root {
     --unnamed-color-000000: #000000;
-    --unnamed-color-ffffff: #FFFFFF;
-    --unnamed-color-a9a9a9: #A9A9A9;
-    --unnamed-color-ffd664: #FFD664;
-    --unnamed-color-2fad9f00: #2FAD9F00;
-    --unnamed-color-2fad9f: #2FAD9F;
+    --unnamed-color-ffffff: #ffffff;
+    --unnamed-color-a9a9a9: #a9a9a9;
+    --unnamed-color-ffd664: #ffd664;
+    --unnamed-color-2fad9f00: #2fad9f00;
+    --unnamed-color-2fad9f: #2fad9f;
     --unnamed-color-707070: #707070;
     font-family: "IBM Plex Sans Arabic", sans-serif;
     /* استخدام خط عربي، يمكنك اختيار أي خط عربي تفضله */
@@ -44,7 +44,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #2FAD9F;
+    background: #2fad9f;
 }
 
 .mobile-header {
@@ -63,18 +63,16 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #FCEFCE;
+    background-color: #fcefce;
     overflow-x: hidden;
     transition: 0.3s;
-
 }
 
 #main {
-    transition: margin-left .3s;
+    transition: margin-left 0.3s;
     width: 32px;
     height: 32px;
     margin: 24px;
-
 }
 
 .mobile-logo {
@@ -87,8 +85,6 @@ body {
     background: url(../images/Rectangle\ 102.svg);
     height: auto;
 }
-
-
 
 .header {
     position: sticky;
@@ -149,7 +145,7 @@ a.nav-link {
     width: 0px;
     margin-top: 3px;
     height: 4px;
-    background-color: #2FAD9F;
+    background-color: #2fad9f;
     position: absolute;
     left: 10px;
     top: 80%;
@@ -172,14 +168,13 @@ a.nav-link {
 
 .custom a {
     font-weight: bold;
-    color: #2FAD9F;
+    color: #2fad9f;
     font-family: "IBM Plex Sans Arabic", sans-serif;
     font-size: 20px;
 }
 
 .mycustom a.nav-link {
-
-    color: #2FAD9F;
+    color: #2fad9f;
     font-weight: bold;
     font-family: "IBM Plex Sans Arabic", sans-serif;
     font-size: 24px;
@@ -190,7 +185,6 @@ a.nav-link {
     font-weight: bold;
     font-family: "IBM Plex Sans Arabic", sans-serif;
     font-size: 24px;
-
 }
 
 .nav-item-mobile .nav-link {
@@ -198,7 +192,6 @@ a.nav-link {
     font-weight: bold;
     font-family: "IBM Plex Sans Arabic", sans-serif;
     font-size: 24px;
-
 }
 
 .h1 {
@@ -210,7 +203,6 @@ a.nav-link {
 }
 
 .h2 {
-
     color: #000000;
     line-height: 48px;
     font-family: "IBM Plex Sans Arabic", sans-serif;
@@ -240,7 +232,7 @@ div.col.mycol {
 
 .section-two {
     height: 240px;
-    background: #FCEFCE;
+    background: #fcefce;
 }
 
 .text-section-two {
@@ -248,7 +240,6 @@ div.col.mycol {
     margin: auto;
     padding-top: 85px;
 }
-
 
 .text-section-two {
     padding-top: 85px;
@@ -280,7 +271,7 @@ div.col.mycol {
 }
 
 .section-three {
-    background: #2FAD9F1A;
+    background: #2fad9f1a;
 }
 
 .section-three-h3 {
@@ -297,8 +288,6 @@ div.col.mycol {
     font-size: 24px;
     font-family: "IBM Plex Sans Arabic", sans-serif;
     font-weight: bold;
-
-
 }
 
 .section-three-p {
@@ -307,12 +296,62 @@ div.col.mycol {
     font-family: "IBM Plex Sans Arabic", sans-serif;
     margin-top: 15px;
     margin-bottom: 80px;
+}
 
+.section-five h3 {
+    margin-top: 130px;
+    color: #000000;
+    font-size: 32px;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    font-weight: bold;
+}
 
+.section-five p {
+    color: #707070;
+    font-size: 20px;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    margin-top: 16px;
+}
+
+.card {
+    margin-top: 16px;
+    border: 1px solid #a9a9a9;
+    border-radius: 15px;
+}
+
+.card h5 {
+    margin: 0px;
+    font-size: 22px;
+    color: #000000;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    font-weight: bold;
+}
+
+.name-card p {
+    margin: 0px;
+    font-size: 15px;
+    color: #a9a9a9;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+}
+
+.name-card {
+    margin-right: 16px;
+    margin-top: 7px;
+}
+
+p.card-text {
+    margin-top: 10px;
+    font-size: 17px;
+    color: #a9a9a9;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+}
+
+#lastcard {
+    margin-bottom: 110px;
 }
 
 footer {
-    background: #FCEFCE;
+    background: #fcefce;
 }
 
 footer h6 {
@@ -320,7 +359,6 @@ footer h6 {
     font-size: 18px;
     font-family: "IBM Plex Sans Arabic", sans-serif;
     margin-top: 8px;
-
 }
 
 footer h4 {
@@ -345,13 +383,17 @@ footer p {
     font-size: 12px;
     font-family: "IBM Plex Sans Arabic", sans-serif;
     padding-bottom: 105px;
-
 }
 
+.hidden-card {
+    display: none;
+}
 
+#section-five-mob {
+    display: none;
+}
 
 @media (max-width: 767px) {
-
     .mobile-header {
         display: block;
     }
@@ -389,7 +431,6 @@ footer p {
     }
 
     .h2 {
-
         color: #707070;
         line-height: 36px;
         font-family: "IBM Plex Sans Arabic", sans-serif;
@@ -418,7 +459,7 @@ footer p {
 
     .section-two {
         height: auto;
-        background: #FCEFCE;
+        background: #fcefce;
     }
 
     .mycontainer {
@@ -427,30 +468,24 @@ footer p {
         /* padding: 48px 10px 48px 10px; */
     }
 
-
     .text-section-two {
         padding: 48px 0px 48px 0px;
         width: auto;
         margin-left: auto;
-
     }
 
     .section-two-img-one {
         display: none;
-
     }
 
     .section-two-img-two {
         display: block;
         width: 158px;
-
-
     }
 
     .anotdark {
         justify-content: center;
     }
-
 
     .h3 {
         padding-right: 32px;
@@ -467,6 +502,37 @@ footer p {
         color: #000000;
         font-size: 18px;
         font-family: "IBM Plex Sans Arabic", sans-serif;
+    }
+
+    .col-12 {
+        width: 352px;
+        padding: 0px;
+        margin-left: auto;
+    }
+
+    #section-five {
+        display: none;
+    }
+
+    #section-five-mob {
+        display: block;
+    }
+
+    .mt-16 {
+        margin-top: 16px;
+    }
+
+    #show-more-btn {
+        width: 180px;
+        height: 50px;
+        border: #000000 1px solid;
+        border-radius: 27px;
+        color: #000000;
+        font-size: 18px;
+        font-family: "IBM Plex Sans Arabic", sans-serif;
+        font-weight: bold;
+        margin-top: 50px;
+        margin-bottom: 70px;
     }
 }
 
