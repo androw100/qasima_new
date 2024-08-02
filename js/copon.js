@@ -1,4 +1,3 @@
-// بيانات الفئات والكوبونات
 var all_categories = [];
 var all_coupons = [];
 var filtered_coupons = [];
@@ -42,7 +41,7 @@ function addEventListeners() {
 // جلب بيانات الفئات
 async function fetchCategories() {
   try {
-    var response = await fetch("http://192.168.1.3:3001/api/categories"); // استخدم IP المحلي الصحيح هنا
+    var response = await fetch("http://localhost:4000/api/categories");
     if (!response.ok) {
       throw new Error("Network response was not ok " + response.statusText);
     }
@@ -62,7 +61,7 @@ async function fetchCategories() {
 // جلب بيانات الكوبونات لجميع الفئات
 async function fetchCoupons() {
   try {
-    var response = await fetch("http://192.168.1.3:3001/api/home/0"); // استخدم IP المحلي الصحيح هنا
+    var response = await fetch("http://localhost:4000/api/home/0");
     if (!response.ok) {
       throw new Error("Network response was not ok " + response.statusText);
     }
@@ -82,7 +81,7 @@ async function fetchCoupons() {
 // جلب بيانات الكوبونات حسب الفئة
 async function fetchCouponsByCategory(categoryId) {
   try {
-    var response = await fetch(`http://192.168.1.100:3001/api/home/${categoryId}`); // استخدم IP المحلي الصحيح هنا
+    var response = await fetch(`http://localhost:4000/api/home/${categoryId}`);
     if (!response.ok) {
       throw new Error("Network response was not ok " + response.statusText);
     }
@@ -223,20 +222,6 @@ function closeNav() {
   }
 }
 
-// تهيئة AOS
-AOS.init();
-
-// عرض المزيد من العناصر
-document
-  .getElementById("show-more-btn")
-  ?.addEventListener("click", function () {
-    let hiddenCards = document.querySelectorAll(".hidden-card");
-    hiddenCards.forEach(function (card) {
-      card.classList.remove("hidden-card");
-    });
-    this.style.display = "none";
-  });
-
-// استدعاء دوال الجلب
+// جلب بيانات الفئات والكوبونات عند تحميل الصفحة
 fetchCategories();
 fetchCoupons();
