@@ -3,7 +3,12 @@ import cors from 'cors';
 import fetch from 'node-fetch';
 
 const app = express();
-app.use(cors());
+
+// إعداد CORS
+app.use(cors({
+  origin: '*', // يسمح بالطلبات من جميع النطاقات، تأكد من ضبطه بشكل أكثر أماناً في الإنتاج
+  methods: ['GET', 'POST'], // تحديد الأساليب المسموح بها
+}));
 
 app.get('/api/categories', async (req, res) => {
   try {
