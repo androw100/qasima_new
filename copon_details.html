@@ -1,18 +1,69 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>عرض التصنيفات</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>تفاصيل الكوبون</title>
 </head>
 
 <body>
-    <div class="categories-container" id="categories-container">
-        <!-- التصنيفات ستظهر هنا -->
+    <h1>تفاصيل الكوبون</h1>
+    <div id="coupon-details">
+        <!-- سيتم تحميل تفاصيل الكوبون هنا -->
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        // جلب تفاصيل الكوبون بناءً على معرف الكوبون
+        async function fetchCouponDetails(couponId) {
+            try {
+                var response = await fetch(`http://localhost:3001/api/coupons/${couponId}`);
+                if (!response.ok) {
+                    throw new Error("Network response was not ok " + response.statusText);
+                }
+                var data = await response.json();
+                console.log("Coupon details fetched:", data);
+                if (data && data.data) {
+                    displayCouponDetails(data.data);
+                } else {
+                    console.error("No data found in response");
+                }
+            } catch (error) {
+                console.error("Error fetching coupon details:", error);
+            }
+        }
+
+        // عرض تفاصيل الكوبون
+        function displayCouponDetails(coupon) {
+            var detailsElement = document.getElementById("coupon-details");
+            if (detailsElement) {
+                detailsElement.innerHTML = `
+          <img src="${coupon.image}" alt="${coupon.title}">
+          <h2>${coupon.title}</h2>
+          <p>${coupon.description}</p>
+          <p>كود الخصم: ${coupon.discount_code}</p>
+        `;
+            } else {
+                console.error('Element with id "coupon-details" not found');
+            }
+        }
+
+        // الحصول على معرف الكوبون من الرابط وجلب تفاصيله
+        function getCouponIdFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('id');
+        }
+
+        // استدعاء دالة جلب تفاصيل الكوبون عند تحميل الصفحة
+        window.onload = function () {
+            const couponId = getCouponIdFromURL();
+            if (couponId) {
+                fetchCouponDetails(couponId);
+            } else {
+                console.error("No coupon ID found in URL");
+            }
+        }
+    </script>
 </body>
 
 </html>

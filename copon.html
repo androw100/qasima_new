@@ -8,6 +8,10 @@
     <link rel="icon" href="./images/logo.png">
     <!-- استدعاء Bootstrap CSS من CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/all.min.css">
@@ -141,13 +145,50 @@
             </nav>
         </header>
     </div>
-    <div class="container">
-        <div class="row-cols-4 justify-content-center align-items-center g-2" id="row_data">
-        </div>
+    <div class="container d-flex">
+        <div class="item  row_data all-cat" id="all-cat">
 
+            <p>الكل</p>
+        </div>
+        <div class="owl-carousel " id="row_data">
+
+        </div>
     </div>
 
-    <div class="category-container" id="category-container"></div>
+
+    <div class="container">
+        <div class="row " id="category-container">
+
+        </div>
+    </div>
+    <!-- <div class="container">
+                <div class="card">
+                    <div class="card-header" id="card-header" onclick="toggleCard()">
+                        <img src="asos-logo.png" alt="Asos" class="store-logo">
+                        <div class="store-info">
+                            <h3 class="store-name">أسوس | Asos</h3>
+                            <p class="discount">20%</p>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            تشكيلة واسعة من الملابس والأحذية والإكسسوارات، من جميع الماركات الحصرية والعالمية، بخصم لك
+                            20%:
+                            استخدم
+                            كود FF20
+                            <span class="emoji">🛍️😃</span>
+                        </p>
+                        <div class="buttons">
+                            <button class="copy-code">انسخ الكود من التطبيق</button>
+                            <button class="shop-now">تسوق الآن</button>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+    <!-- <div class="container">
+        <div class="category-container" ></div>
+    </div> -->
+
 
     <footer class="text-center">
         <div class="container">
@@ -193,7 +234,7 @@
             <p>جميع الحقوق محفوظة لموقع قسيمة 2023</p>
         </div>
     </footer>
-    <div id="data-container"></div>
+
     <!-- استدعاء jQuery من CDN-->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <!-- استدعاء Popper.js من CDN -->
@@ -201,7 +242,12 @@
     <!-- استدعاء Bootstrap JS من CDN -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <script src="./js/copon.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 </body>
 
 </html>
