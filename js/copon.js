@@ -9,7 +9,6 @@ function displayCategories() {
   if (Array.isArray(all_categories)) {
     for (var i = 0; i < all_categories.length; i++) {
       box += `
-      
         <div class="item" data-id="${all_categories[i].id}" data-name="${all_categories[i].name}">
           <img id="cat-img" src="${all_categories[i].photo}" alt="${all_categories[i].name}">
           <p>${all_categories[i].name}</p>
@@ -43,7 +42,7 @@ function addEventListeners() {
 // جلب بيانات الفئات
 async function fetchCategories() {
   try {
-    var response = await fetch("http://localhost:3001/api/categories");
+    var response = await fetch("http://192.168.1.3:3001/api/categories"); // استخدم IP المحلي الصحيح هنا
     if (!response.ok) {
       throw new Error("Network response was not ok " + response.statusText);
     }
@@ -63,7 +62,7 @@ async function fetchCategories() {
 // جلب بيانات الكوبونات لجميع الفئات
 async function fetchCoupons() {
   try {
-    var response = await fetch("http://localhost:3001/api/home/0");
+    var response = await fetch("http://192.168.1.3:3001/api/home/0"); // استخدم IP المحلي الصحيح هنا
     if (!response.ok) {
       throw new Error("Network response was not ok " + response.statusText);
     }
@@ -83,7 +82,7 @@ async function fetchCoupons() {
 // جلب بيانات الكوبونات حسب الفئة
 async function fetchCouponsByCategory(categoryId) {
   try {
-    var response = await fetch(`http://localhost:3001/api/home/${categoryId}`);
+    var response = await fetch(`http://192.168.1.100:3001/api/home/${categoryId}`); // استخدم IP المحلي الصحيح هنا
     if (!response.ok) {
       throw new Error("Network response was not ok " + response.statusText);
     }
@@ -105,57 +104,55 @@ function displayCoupons(coupons) {
   if (Array.isArray(coupons)) {
     for (var i = 0; i < coupons.length; i++) {
       box += `
-
-<div class="col-12 mt-5">
-        <div class="copon-card d-flex justify-content-between align-items-center">
+        <div class="col-12 mt-5">
+          <div class="copon-card d-flex justify-content-between align-items-center">
             <div class="name-copon d-flex">
-                <div class="copon-img">
-                    <img class="img-fluid" src="${coupons[i].image}" alt="${coupons[i].title}">
-                </div>
-                <div class="main-name-copon">
-                    <h3>${coupons[i].title}</h3>
-                    <p>${coupons[i].discount_percent}</p>
-                </div>
+              <div class="copon-img">
+                <img class="img-fluid" src="${coupons[i].image}" alt="${coupons[i].title}">
+              </div>
+              <div class="main-name-copon">
+                <h3>${coupons[i].title}</h3>
+                <p>${coupons[i].discount_percent}</p>
+              </div>
             </div>
             <div class="option p-3 mt-3">
-                <ul class="d-flex text-center align-items-center justify-content-center">
-                    <li class="text-center no no1">
-                        <a class="m-1" href="#">
-                            <i class="fa-regular fa-heart"></i>
-                        </a>
-                    </li>
-                    <li class="text-center no no2">
-                        <a class="m-1" href="#">
-                          <i class="fa-solid fa-share-nodes"></i>
-                        </a>
-                    </li>
-                    
-                    <li class="text-center">
-                        <button id="toggle-button-${i}" onclick="toggleDetails(${i})">
-                            <img id="toggle-icon-${i}" src="./images/down.svg" alt="عرض المزيد">
-                        </button>
-                    </li>
-                </ul>
+              <ul class="d-flex text-center align-items-center justify-content-center">
+                <li class="text-center no no1">
+                  <a class="m-1" href="#">
+                    <i class="fa-regular fa-heart"></i>
+                  </a>
+                </li>
+                <li class="text-center no no2">
+                  <a class="m-1" href="#">
+                    <i class="fa-solid fa-share-nodes"></i>
+                  </a>
+                </li>
+                <li class="text-center">
+                  <button id="toggle-button-${i}" onclick="toggleDetails(${i})">
+                    <img id="toggle-icon-${i}" src="./images/down.svg" alt="عرض المزيد">
+                  </button>
+                </li>
+              </ul>
             </div>
-        </div>
-        <div id="details-${i}" class="details">
-         <div class="container text-center">
-            <p class="pt-3">${coupons[i].description}</p>
+          </div>
+          <div id="details-${i}" class="details">
             <div class="container text-center">
-            <div class="row align-items-center justify-content-center">
-    <div class="col-5 m-3  copy">
-     <img class="img-fluid m-3" src="./images/teckit.svg" alt="">
-انسخ الكود من التطبيق    </div>
-   
-    <div class="col-5 m-3 copy ">
-     <i class="fa-solid fa-cart-shopping m-3"></i>
-     تسوق الان
-    </div>
-  </div>
-</div>
+              <p class="pt-3">${coupons[i].description}</p>
+              <div class="container text-center">
+                <div class="row align-items-center justify-content-center">
+                  <div class="col-5 m-3 copy">
+                    <img class="img-fluid m-3" src="./images/teckit.svg" alt="">
+                    انسخ الكود من التطبيق
+                  </div>
+                  <div class="col-5 m-3 copy">
+                    <i class="fa-solid fa-cart-shopping m-3"></i>
+                    تسوق الان
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-         </div>
-    </div>
       `;
     }
   } else {
@@ -169,21 +166,20 @@ function displayCoupons(coupons) {
     console.error('Element with id "category-container" not found');
   }
 }
+
 function toggleDetails(index) {
   var details = document.getElementById(`details-${index}`);
   var icon = document.getElementById(`toggle-icon-${index}`);
   if (details.style.display === "none" || details.style.display === "") {
-      details.style.display = "block";
-      icon.src = "./images/up.svg"; // استبدال السهم إلى أعلى
-      icon.alt = "عرض أقل";
+    details.style.display = "block";
+    icon.src = "./images/up.svg"; // استبدال السهم إلى أعلى
+    icon.alt = "عرض أقل";
   } else {
-      details.style.display = "none";
-      icon.src = "./images/down.svg"; // استبدال السهم إلى أسفل
-      icon.alt = "عرض المزيد";
+    details.style.display = "none";
+    icon.src = "./images/down.svg"; // استبدال السهم إلى أسفل
+    icon.alt = "عرض المزيد";
   }
 }
-
-
 
 // تهيئة Owl Carousel
 function initializeOwlCarousel() {
@@ -244,9 +240,3 @@ document
 // استدعاء دوال الجلب
 fetchCategories();
 fetchCoupons();
-
-function toggleCard() {
-  const card = document.querySelector('.card');
-  card.classList.toggle('open');
-}
-
