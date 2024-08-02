@@ -41,7 +41,7 @@ function addEventListeners() {
 // جلب بيانات الفئات
 async function fetchCategories() {
   try {
-    var response = await fetch("http://localhost:4000/api/categories");
+    var response = await fetch("https://qasimahapp.com/api/categories");
     if (!response.ok) {
       throw new Error("Network response was not ok " + response.statusText);
     }
@@ -61,7 +61,7 @@ async function fetchCategories() {
 // جلب بيانات الكوبونات لجميع الفئات
 async function fetchCoupons() {
   try {
-    var response = await fetch("http://localhost:4000/api/home/0");
+    var response = await fetch("https://qasimahapp.com/api/home/0");
     if (!response.ok) {
       throw new Error("Network response was not ok " + response.statusText);
     }
@@ -81,7 +81,7 @@ async function fetchCoupons() {
 // جلب بيانات الكوبونات حسب الفئة
 async function fetchCouponsByCategory(categoryId) {
   try {
-    var response = await fetch(`http://localhost:4000/api/home/${categoryId}`);
+    var response = await fetch(`https://qasimahapp.com/api/home/${categoryId}`);
     if (!response.ok) {
       throw new Error("Network response was not ok " + response.statusText);
     }
